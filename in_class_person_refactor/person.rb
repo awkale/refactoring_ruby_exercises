@@ -9,8 +9,8 @@ class Person
     @first_name = first_name
     @middle_name = middle_name
     @last_name = last_name
-    @bank_name = bank_name
     @birthday = Date.parse(birthday)
+    @bank_name = bank_name
     @bank_routing_number = bank_routing_number
     @bank_account_number = bank_account_number
     @street_address = street_address
@@ -47,10 +47,7 @@ class Person
     puts @bank_name
     puts "Routing # #{@bank_routing_number}"
     puts "Acct # #{@bank_account_number}"
-
   end
-
-
 
 end
 

@@ -10,13 +10,21 @@ Refactoring is a favor to your future self reading code from ages ago or a colla
 
 This is part of the reality of software development. People don't _always_ follow best practices, including yours truly. There are such things as deadlines, and unfortunately, not everyone has the luxury of writing clean code. People cut corners to save time, and it ends up costing far more in the long run. 
 
+We do this through _composing_ our code in classes. Unlike inheritance, which is best pictures in terms of animal cladistics, composition involves relating things together, like cells that make tissues that make organs that make animals. 
+
 We are going to take a horribly designed class, do a little of refactoring and a little enhancing once it's nice and modular, i.e. easy to test and work with.
+
+# Practical Intro
+
+Watch as I refactor a cluncky class. No need to code along, just watch, chill and ask questions. 
+
+# Together: Cash Register app
 
 ## Setup
 
-Make sure that you have a global installation of both `pry` and `rspec` for the ruby version you are using. 
+Make sure that you have a global installation of `pry` for the ruby version you are using. 
 
-You can make sure by running `$ gem list rspec` and `$ gem list pry` from your terminal. If you don't get any output from that, just run `$ gem install rspec` and `$ gem install pry`.
+You can make sure by running and `$ gem list pry` from your terminal. If you don't get any output from that, just run `$ gem install pry`.
 
 ## Start: the receipt class
 
@@ -36,7 +44,9 @@ Solutions:
 
 * Make that huge method more sane by `extracting` pieces of the method into smaller, easier to understand ones. This just means we will make smaller methods that work in concert to get the same result.
 
-* Make additional classes with the necessary behavior to make this application more modular and easier to understand. 
+* Make additional classes with the necessary behavior to make this application more modular and easier to understand.
+
+* Take methods with a lot of branching if statements and parameterize them if possible. I can't seem to find where this quote is from but I remember reading a joke like "An ethical programmer would never write a function called `bomb_baghdad`. They would make a `bomb_city(city)` function that takes in `city` as a parameter so the code is more reusable.
 
 * If we have time, we will also introduce the NullObject pattern for dealing with fallbacks such as default tax rates
 
@@ -72,10 +82,3 @@ Classes:
 
 ```
 
-Check
-
-##Help is out there
-
-Though I personally prefer against them, IDEs such as Ruby Mine and PyCharm from JetBrains offer built in advice. Integrated development environments offer 
-
-For ruby, there is a gem called [Rubocop](https://github.com/bbatsov/rubocop) which studies your code and points out uncleanliness. It's based on the widely followed [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide). Unlike Python, Ruby lacks a canonical set of rules regarding coding style, and some companies have their own style guides. It's a bit strict, but Rubocop provides food for thought when refactoring your code. Until your nose becomes adept at spotting code smells, you might have some luck with the [Reek](https://github.com/troessner/reek) gem.
