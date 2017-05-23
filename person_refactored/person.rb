@@ -1,7 +1,3 @@
-require 'pry'
-require 'rspec'
-require 'date'
-
 class Person
   attr_accessor :first_name, :middle_name, :last_name, :birthday, :bank_name, :bank_routing_number, :bank_account_number, :street_address, :apartment_number, :zip_code
 
@@ -47,13 +43,11 @@ class Person
     puts @bank_name
     puts "Routing # #{@bank_routing_number}"
     puts "Acct # #{@bank_account_number}"
+  end
+
+  def full_name
 
   end
 
 
-
 end
-
-alice = Person.new("Alice", "Abigail", "Anderson", "1984-07-13", "TD", 12345, 253367435, "118 Eagle St", "", 11222)
-bob = Person.new("Bob", "", "Barnes", "1992-07-13", "Chase", 12677, 426386, "990 Manhattan Av", "16", 11222)
-binding.pry

@@ -34,6 +34,19 @@ class Receipt
       tax_rate = 5
     end
 
+    #taxes come out before discounts. C'est la vie.
+    if taxable
+      tax_percentage = tax_rate / 100.0
+      tax_amount = grand_total * tax_percentage
+      grand_total += tax_amount
+    end
+
+    grand_total -= discount_amount
+    return grand_total
+    #simple, right? 
+  end
+
+  def discount_amount
     if @discount_type == "loyalty card"
       discount_rate = 5
     elsif @discount_type == "blowout sale"
@@ -47,17 +60,6 @@ class Receipt
     if customer_brought_bag
       grand_total -= - 0.50
     end
-
-    #taxes come out before discounts. C'est la vie.
-    if taxable
-      tax_percentage = tax_rate / 100.0
-      tax_amount = grand_total * tax_percentage
-      grand_total += tax_amount
-    end
-
-    grand_total -= discount_amount
-    return grand_total
-    #simple, right? 
   end
 end
 
