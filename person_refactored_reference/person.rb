@@ -17,7 +17,6 @@ class Person
     puts full_name
     puts "------------"
     puts "Address:"
-    puts address
     puts "------------"
     puts "Age:"
     puts age
@@ -33,14 +32,6 @@ class Person
       return "#{@first_name} #{@last_name}"
     else
       return "#{@first_name} #{@middle_name} #{@last_name}"
-    end
-  end
-
-  def address
-    if !@apartment_number || @apartment_number.empty?
-      address = "#{@street_address}, #{@zip_code}"
-    else 
-      address = "#{@street_address} ##{@apartment_number}, #{@zip_code}"
     end
   end
 
