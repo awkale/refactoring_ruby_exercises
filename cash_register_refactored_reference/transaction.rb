@@ -1,6 +1,6 @@
 
 class Transaction
-  attr_accessor :product, :city, :discount_type
+  attr_accessor :product, :city, :discount
 
   def initialize(product, city, discount)
     @product = product
@@ -10,18 +10,20 @@ class Transaction
 
   def tax_rate
     if @product.is_taxable
-      return (@city.sales_tax_rate / 100.0)
+      return @city.sales_tax_rate / 100.0 + 1
     end
+    return 1
   end
 
   def discount_rate
     if @discount
-      return @product.price * (@discount.rate / 100.0)
+      return 1 - @discount.rate / 100.0
     end
+    return 1
   end
 
   def calculate_total
-    return @product.price + calculate_tax_amount.to_f - calculate_discount_amount.to_f
+    return (@product.price * tax_rate.to_f) * discount_rate.to_f
   end
 
 end
