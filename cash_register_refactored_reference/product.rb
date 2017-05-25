@@ -1,9 +1,9 @@
 class Product
-  attr_accessor :name, :type, :price
+  attr_accessor :name, :is_taxable, :price
 
-  def initialize(name, type, price)
+  def initialize(name, is_taxable, price)
     @name = name
-    @type = type
+    @is_taxable = is_taxable
     @price = price
   end
 

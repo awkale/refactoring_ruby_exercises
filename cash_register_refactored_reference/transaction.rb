@@ -5,18 +5,18 @@ class Transaction
   def initialize(product, city, discount)
     @product = product
     @city = city
-    @discount = discount
+    @discount = discount || NullObject
   end
 
-  def calculate_tax_amount
-    if @product.type == "taxable"
-      return @city.tax_rate * @product.price
+  def tax_rate
+    if @product.is_taxable
+      return (@city.sales_tax_rate / 100.0)
     end
   end
 
-  def calculate_discount_amount
+  def discount_rate
     if @discount
-      return @product.price * @discount.rate
+      return @product.price * (@discount.rate / 100.0)
     end
   end
 

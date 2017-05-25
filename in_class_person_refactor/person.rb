@@ -41,7 +41,6 @@ class Person
     puts ((Date.today - @birthday).to_i / 365)
     puts "------------"
     puts "Account Info"
-    puts "------------"
     puts @bank_name
     puts "Routing # #{@bank_routing_number}"
     puts "Acct # #{@bank_account_number}"

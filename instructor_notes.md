@@ -9,7 +9,35 @@ After introducing the why of refactoring, read through and talk about how many d
 3) Then it calculates the person's age
 4) Finally, it prints it out ever so gorgeously.
 
-Pull out those things into separate methods + a `to_s` method that just dupes `print_intro`
+Pull out those things into separate methods + a `to_s` method 
+
+new Person methods: 
+
+```ruby
+
+  def full_name
+    if !@middle_name || @middle_name.empty?
+      return "#{@first_name} #{@last_name}"
+    else
+      return "#{@first_name} #{@middle_name} #{@last_name}"
+    end
+  end
+
+  def address
+    if !@apartment_number || @apartment_number.empty?
+      return "#{@street_address}, #{@zip_code}"
+    else 
+      return "#{@street_address} ##{@apartment_number}, #{@zip_code}"
+    end
+  end
+
+  def age
+    age = (Date.today - @birthday).to_i / 365
+  end
+
+  ```
+
+
 
 Look! how nice. Point out that there is at least one unexpected guest in Person. Bank! 
 
