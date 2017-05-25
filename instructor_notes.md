@@ -1,5 +1,7 @@
 # Person class exercise
 
+## I do
+
 After introducing the why of refactoring, read through and talk about how many different jobs `introduce` is doing. Look for nouns and verbs. Solicit participation if the crowd seems keen. 
 
 1) `introduce` first figures out how to print the first name
@@ -30,6 +32,7 @@ class BankAccount
   end
 end
 ```
+
 ```ruby
 class Person
   attr_accessor :first_name, :middle_name, :last_name, :birthday, :bank, :street_address, :apartment_number, :zip_code
@@ -63,6 +66,11 @@ class Person
   #.........
   ```
 
-  If the students have a really easy time of that let them extract an address class.
+If the students have a really easy time of that let them extract an address class.
 
-  # Cash register
+# Cash register
+
+Read through the code and just like a second ago, look for some uninvited nouns and verbs that are doing too much. 
+
+
+What happens when we expand our cities knowledge? A new discount type? 

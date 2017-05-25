@@ -18,13 +18,12 @@ class Person
     puts "------------"
     puts "Address:"
     puts "------------"
+    puts @street_address
     puts "Age:"
     puts age
     puts "------------"
     puts "Account Info"
-    puts @bank.name
-    puts "Routing # #{@bank.routing_number}"
-    puts "Acct # #{@bank.account_number}"
+    puts @bank
   end
 
   def full_name
@@ -32,6 +31,14 @@ class Person
       return "#{@first_name} #{@last_name}"
     else
       return "#{@first_name} #{@middle_name} #{@last_name}"
+    end
+  end
+
+  def address
+    if !@apartment_number || @apartment_number.empty?
+      return "#{@street_address}, #{@zip_code}"
+    else 
+      return "#{@street_address} ##{@apartment_number}, #{@zip_code}"
     end
   end
 

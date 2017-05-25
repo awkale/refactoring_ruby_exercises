@@ -30,8 +30,6 @@ class Person
     else 
       address = "#{@street_address} ##{@apartment_number}, #{@zip_code}"
     end
-
-    age = (Date.today - @birthday) / 365
     
     puts "Name:" 
     puts full_name
@@ -40,7 +38,7 @@ class Person
     puts address
     puts "------------"
     puts "Age:"
-    puts age
+    puts ((Date.today - @birthday).to_i / 365)
     puts "------------"
     puts "Account Info"
     puts "------------"
